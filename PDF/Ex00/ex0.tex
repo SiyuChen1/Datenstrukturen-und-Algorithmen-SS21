@@ -1,0 +1,54 @@
+\documentclass[12pt]{scrartcl}
+\input{../styles/Packages.tex}
+\input{../styles/FormatAndHeader.tex}
+
+\setcounter{sheetnr}{0} % Nummer des Übungsblattes
+\setcounter{exnum}{1} % Nummer der Aufgabe
+
+% Beginn des eigentlichen Dokuments
+
+\begin{document}
+
+% Aufgabe 1
+\exercise{Taschenrechner}
+Java-Programmierungsaufgabe
+
+% Aufgabe 2
+\exercise{Java-Generics}
+Java-Programmierungsaufgabe
+
+% Aufgabe 3
+\exercise{More Java-Generics}
+Java-Programmierungsaufgabe
+
+% Aufgabe 4
+\exercise{Übungslösungsalgorithmus}
+\begin{algorithm}[H]
+\SetAlgoLined
+Download exercise sheet from ILIAS\;
+Before the team meeting every team member try to solve questions in the exercise sheet independently\;
+\ForEach{question $q_i \in $ exercise sheet $Q$}{%
+  \uIf{everyone has an idea to solve $q_i$}{%
+    discuss ideas\;
+    check correctness\;
+  }
+  \uElseIf{Not all team member has an idea to solve $q_i$}{
+    anyone who has an idea shares his idea with other team member\;
+    check correctness\;
+  }
+  \Else{
+     discuss the questions together\;
+    \uIf{there is some ideas}{
+        check correctness\;
+    }\Else{
+        turn to tutor or fellow student\;
+    }
+  }
+}
+edit the solution together via online document\;
+attend the tutorium\;
+ \caption{How to solve the exercise sheet of DSA}
+\end{algorithm}
+
+% Ende des Dokuments
+\end{document}
