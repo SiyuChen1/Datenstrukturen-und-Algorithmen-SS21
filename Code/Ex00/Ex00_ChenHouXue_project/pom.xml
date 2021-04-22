@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.unistuttgart.vis.dsass2021.ex00</groupId>
-	<artifactId>Ex00_ChenHouXu_project</artifactId>
+	<artifactId>Ex00_ChenHouXue_project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Ex00_ChenHouXu_project</name>
+	<name>Ex00_ChenHouXue_project</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
