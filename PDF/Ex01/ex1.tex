@@ -38,7 +38,6 @@
         $m = (0 + 14)/2 = 7, F_1[m] = 73 > 11$ \\
         $m = (0 + 6)/2 = 3, F_1[m] = 43 > 11$ \\
         $m = (0 + 2)/2 = 1, F_1[m] = 23 > 11$ \\
-        $m = (0 + 2)/2 = 1, F_1[m] = 23 > 11$ \\
         $m = 0, 1 < 11$ return no\_key
       \item Folge 2, gesuchtes Element:48\\
         $m = (0 + 14)/2 = 7, F_2[m] = 73 > 48$ \\
@@ -63,6 +62,8 @@ Java-Programmierungsaufgabe
       \item 4, 8, 2, 18, 22, 32, 50, 91, 53, 67
       \item 4, 8, 2, 18, 22, 32, 50, 53, 91, 67
       \item 4, 8, 2, 18, 22, 32, 50, 53, 67, 91
+      \item 4, 2, 8, 18, 22, 32, 50, 53, 67, 91
+      \item 2, 4, 8, 18, 22, 32, 50 ,53, 67, 91
     \end{itemize} 
   \item Für diese einfach verkettete List ist es unmöglich, die Knoten von hinten nach vorne zu iterieren.
 \end{enumerate}
@@ -70,17 +71,15 @@ Java-Programmierungsaufgabe
 % Aufgabe 4
 \exercise{Sortierverfahren Komplexität}
 \begin{enumerate}
-  \item SelectionSort\\
-    Sei die Folge F absteigend, nach dem ersten äußeren Durchlauf wird das größte Element(Index = 0) mit dem kleinsten Element(Index = n-1) ausgetauscht.
-    Die Länge der Folge wird auf n-2 verkürzt und die Anzahl der Vergleiche wird auch von n-1 auf n-3 versunken.\\
-    Wenn n gerade ist, ist die gesamte Anzahl der Vergleiche $\frac{n^2}{4}$. Wenn n ungerade ist, ist die gesamte Anzahlder Vergleiche $\frac{n^2 -1 }{4}$.\\
-    Mit O-Notation $O(n^2)$.
-  \item InsertionSort\\
+  \item MergeSort\\
+    Da die Folge absteigend sortiert (schlechtester Fall) ist, setzen sich MergeSort durch.\\
+    Mit O-Notation $O(nlog2(n))$.
+  \item BubbleSort und InsertionSort\\
     Da die Folge F aufsteigend ist, es wird nur $n-1$ Vergleiche gebraucht.\\
     Mit O-Notation $O(n)$.
-  \item MergeSort und QuickSort\\
-    Da die Folge chaostisch ist, setzen sich MergeSort und QuickSort durch.
-    Die Laufzeit von QuickSort ist aber von der Wahl des Pivot-Element abhängig.\\
+  \item MergeSort\\
+    Da die Folge chaostisch (durchschnittlicher Fall) ist, setzen sich MergeSort und QuickSort durch.
+    Da die Aufwandanalyse des MergeSort nlog2(n) ist\\
     Mit O-Notation $O(nlog(n))$.
 \end{enumerate}
 
