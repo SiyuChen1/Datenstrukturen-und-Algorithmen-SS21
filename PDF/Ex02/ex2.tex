@@ -1,0 +1,78 @@
+\documentclass[12pt]{scrartcl}
+\input{../styles/Packages.tex}
+\input{../styles/FormatAndHeader.tex}
+
+\setcounter{sheetnr}{2} % Nummer des Übungsblattes
+\setcounter{exnum}{1} % Nummer der Aufgabe
+
+% Beginn des eigentlichen Dokuments
+
+\begin{document}
+
+% Aufgabe 1
+\exercise{Verständnis}
+\begin{enumerate}
+  \item Die folgenden Funktionen in das gemeinsames Koordinatenssystem
+  \begin{figure}[!h]
+    \centering
+      \includegraphics[width=0.5\textwidth]{overview.png}
+    \caption{Alle 6 Funktionen in einer Abbildung}
+  \end{figure}
+  \begin{figure}[!h]
+    \centering
+      \includegraphics[width=0.5\textwidth]{small_y.png}
+    \caption{Nur y-Wert zwischen 0-30 betrachtet wird}
+  \end{figure}
+  \begin{figure}[!h]
+    \centering
+      \includegraphics[width=0.5\textwidth]{big_y.png}
+    \caption{Größer y-Wert betrachtet wird}
+  \end{figure}
+  \item $\mathcal{O}(n!) > \mathcal{O}(2^n) > \mathcal{O}(n^3) > \mathcal{O}(n^2log(n)) > \mathcal{O}(n) > \mathcal{O}(log(n))$
+  \begin{center}
+    \begin{tabular}{ |c|c|c| } 
+     \hline
+     $f_1(n) = 2^n$ & $\mathcal{O}(2^n)$ & exponenziell \\ 
+     $f_2(n) = log(n)$ & $\mathcal{O}(log(n))$ & logarithmisch \\ 
+     $f_3(n) = n$ & $\mathcal{O}(n)$ & linear \\ 
+     $f_4(n) = n!$ & $\mathcal{O}(n!)$ & faktoriell \\ 
+     $f_5(n) = n^3$ & $\mathcal{O}(n^3)$ & polynomiell \\ 
+     $f_6(n) = n^2log(n)$ & $\mathcal{O}(n^2log(n))$ & logquadratisch \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+\end{enumerate}
+
+% Aufgabe 2
+\exercise{Asymptotische Komplexität}
+\begin{enumerate}
+  \item alg1\\
+    for-Schleife i: $\mathcal{O}(n)$\\
+    for-Schleife j: $\mathcal{O}(n)$\\
+    for-Schleife k: $\mathcal{O}(n)$\\
+    Insgesamt: $\mathcal{O}(n)*\mathcal{O}(n)*\mathcal{O}(n) = \mathcal{O}(n^3)$
+    \item alg2\\
+    while-Schleife: $\mathcal{O}(log{}n)$\\
+    for-Schleife i: $\mathcal{O}(n)$\\
+    for-Schleife j: $\mathcal{O}(n)$\\
+    Insgesamt: $\mathcal{O}(log(n)) + \mathcal{O}(n)*\mathcal{O}(n) = \mathcal{O}(n^2)$
+    \item alg3\\
+    die erste for-Schleife i: $\mathcal{O}(n)$\\
+    die zweite for-Schleife i: $\mathcal{O}(n)$\\
+    Insgesamt: $\mathcal{O}(n) + \mathcal{O}(n) = \mathcal{O}(n)$
+    \item alg4\\
+    $alg4(n) = 2alg4(n-1) = 4alg4(n-2) = ... = 2^{(n-1)}alg2(1)$\\
+    Insgesamt: $\mathcal{O}(2^n)$
+    \item alg5\\
+    if-else: $\mathcal{O}(1)$\\
+    for-Schleife i: $\mathcal{O}(n)$\\
+    Für alg(n), if-else und for-Schleife werden n mal aufgerufen.\\
+    Insgesamt: $\mathcal{O}(n^2)$
+    \item alg6\\
+    for-Schleife i: $\mathcal{O}(n)$\\
+    for-Schleife j: $\mathcal{O}(log(n))$\\
+    for-Schleife k: $\mathcal{O}(1)$\\
+    Insgesamt: $\mathcal{O}(n)*(\mathcal{O}(log(n)) + \mathcal{O}(1)) = \mathcal{O}(nlog(n))$
+\end{enumerate}
+
+\end{document}

@@ -26,10 +26,12 @@ Code/*/*/target/
 Code/*/*/.idea/
 
 # ignore files when building .tex file
-PDF/**/
+PDF/*/*.*
 
-!PDF/*/*.tex
-!PDF/*/*.png
+!PDF/Ex00/*.tex
+!PDF/Ex01/*.tex
+!PDF/Ex02/*.tex
+!PDF/Ex02/*.png
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
