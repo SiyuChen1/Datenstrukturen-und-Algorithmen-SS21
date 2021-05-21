@@ -53,9 +53,8 @@
     Insgesamt: $\mathcal{O}(n)*\mathcal{O}(n)*\mathcal{O}(n) = \mathcal{O}(n^3)$
     \item alg2\\
     while-Schleife: $\mathcal{O}(log{}n)$\\
-    for-Schleife i: $\mathcal{O}(n)$\\
-    for-Schleife j: $\mathcal{O}(n)$\\
-    Insgesamt: $\mathcal{O}(log(n)) + \mathcal{O}(n)*\mathcal{O}(n) = \mathcal{O}(n^2)$
+    for-Schleife i und j: wird nur einmal aufgerufen, $\mathcal{O}(1)$\\
+    Insgesamt: $\mathcal{O}(log(n)) + \mathcal{O}(1) = \mathcal{O}(log{n})$
     \item alg3\\
     die erste for-Schleife i: $\mathcal{O}(n)$\\
     die zweite for-Schleife i: $\mathcal{O}(n)$\\
@@ -64,10 +63,9 @@
     $alg4(n) = 2alg4(n-1) = 4alg4(n-2) = ... = 2^{(n-1)}alg2(1)$\\
     Insgesamt: $\mathcal{O}(2^n)$
     \item alg5\\
-    if-else: $\mathcal{O}(1)$\\
     for-Schleife i: $\mathcal{O}(n)$\\
     Für alg(n), if-else und for-Schleife werden n mal aufgerufen.\\
-    Insgesamt: $\mathcal{O}(n^2)$
+    Insgesamt: $n*\mathcal{O}(n) = \mathcal{O}(n^2)$
     \item alg6\\
     for-Schleife i: $\mathcal{O}(n)$\\
     for-Schleife j: $\mathcal{O}(log(n))$\\
