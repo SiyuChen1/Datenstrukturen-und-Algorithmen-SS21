@@ -27,6 +27,7 @@ Code/*/*/.idea/
 
 # ignore files when building .tex file
 PDF/*/*.*
+PDF/*/*/*.*
 
 !PDF/Ex00/*.tex
 !PDF/Ex01/*.tex
