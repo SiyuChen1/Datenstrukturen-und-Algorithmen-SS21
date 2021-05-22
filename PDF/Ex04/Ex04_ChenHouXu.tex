@@ -1,5 +1,6 @@
 \documentclass[12pt]{scrartcl}
 \input{../styles/Packages.tex}
+\input{../styles/Btree.tex}
 \input{../styles/FormatAndHeader.tex}
 
 \setcounter{sheetnr}{4} % Nummer des Übungsblattes
@@ -386,4 +387,252 @@
     \end{figure}
 
   \end{enumerate}
+\setcounter{exnum}{4} % Nummer der Aufgabe
+\exercise{B-Bäume}
+  Einfügen 88, 41, 93, 29, 7 
+  \begin{center}
+    % Set the options for the diagram
+    % - set the distance between each level
+    % - set a style for every node
+    % - "bad" nodes have a 50% opaque red filling
+    % - set the distances between siblings of level 1 and level 2
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+
+      % Draw the nodes, filling in their values and children
+      \node {\fivenode{7}{29}{41}{88}{93}}
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  \newpage
+  Nach dem ersten Split
+  \begin{figure}[!h]
+    \centering
+    \begin{center}
+      \begin{tikzpicture}
+      \tikzstyle{bplus}=[rectangle split, rectangle split horizontal,rectangle split ignore empty parts,draw]
+      \tikzstyle{every node}=[bplus]
+      \tikzstyle{level 1}=[sibling distance=90mm]
+      \tikzstyle{level 2}=[sibling distance=20mm]
+      \node {41} [->]
+            child {node {7 \nodepart{two} 29}}
+            child {node {88 \nodepart{two} 93}
+            };
+      \end{tikzpicture}
+      \end{center}
+    \caption{Split $T_{1}$, Aufteilen des Knotens $(95, 96, 97)$}
+    \label{fig:baum}
+  \end{figure}
+
+  Einfügen 55, 39, 14, 66, 87
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\onenode{41}}[->]
+        child {node {\fournode{7}{14}{29}{39}}
+        }
+        child {node {\fivenode{55}{66}{87}{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  Nach dem zweiten Split
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\twonode{41}{87}}[->]
+        child {node {\fournode{7}{14}{29}{39}}
+        }
+        child {node {\twonode{55}{66}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  Einfügen 6
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\twonode{41}{87}}[->]
+        child {node {\fivenode{6}{7}{14}{29}{39}}
+        }
+        child {node {\twonode{55}{66}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  Nach dem dritten Split
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\threenode{14}{41}{87}}[->]
+        child {node {\twonode{6}{7}}
+        }
+        child {node {\twonode{29}{39}}
+        }
+        child {node {\twonode{55}{66}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  Einfügen 31, 19, 76, 71, 69
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\threenode{14}{41}{87}}[->]
+        child {node {\twonode{6}{7}}
+        }
+        child {node {\fournode{19}{29}{31}{39}}
+        }
+        child {node {\fivenode{55}{66}{69}{71}{79}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  Nach dem vierten Split
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\fournode{14}{41}{69}{87}}[->]
+        child {node {\twonode{6}{7}}
+        }
+        child {node {\fournode{19}{29}{31}{39}}
+        }
+        child {node {\twonode{55}{66}}
+        }
+        child {node {\twonode{71}{79}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  Einfügen 24
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\fournode{14}{41}{69}{87}}[->]
+        child {node {\twonode{6}{7}}
+        }
+        child {node {\fivenode{19}{24}{29}{31}{39}}
+        }
+        child {node {\twonode{55}{66}}
+        }
+        child {node {\twonode{71}{79}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+  Nach dem fünften Split
+  \begin{center}
+    \begin{tikzpicture}[
+      level distance=50pt,
+      every node/.style={inner sep=0pt,font=\small},
+      bad/.style={fill=red!50},
+      level 1/.style={sibling distance=100pt},
+      level 2/.style={sibling distance=70pt}
+    ]
+      \node {\fivenode{14}{29}{41}{69}{87}}[->]
+        child {node {\twonode{6}{7}}
+        }
+        child {node {\twonode{19}{24}}
+        }
+        child {node {\twonode{31}{39}}
+        }
+        child {node {\twonode{55}{66}}
+        }
+        child {node {\twonode{71}{79}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      ;
+    \end{tikzpicture}
+  \end{center}
+
+    Nach dem sechsten Split
+    \begin{center}
+      \begin{tikzpicture}[
+        level distance=50pt,
+        every node/.style={inner sep=0pt,font=\small},
+        bad/.style={fill=red!50},
+        level 1/.style={sibling distance=150pt},
+        level 2/.style={sibling distance=50pt},
+        level 3/.style={sibling distance=30pt},
+      ]
+      \node {\onenode{41}}[->]
+      child {node {\twonode{14}{29}}
+        child {node {\twonode{6}{7}}
+        }
+        child {node {\twonode{19}{24}}
+        }
+        child {node {\twonode{31}{39}}
+        }
+      }
+      child {node {\twonode{69}{87}}
+        child {node {\twonode{55}{66}}
+        }
+        child {node {\twonode{71}{76}}
+        }
+        child {node {\twonode{88}{93}}
+        }
+      };
+      \end{tikzpicture}
+  \end{center}
 \end{document}
