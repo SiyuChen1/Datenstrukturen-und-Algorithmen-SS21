@@ -39,6 +39,9 @@ PDF/*/*/*.*
 !PDF/Ex05/*.tex
 !PDF/Ex06/*.tex
 !PDF/Ex07/*.tex
+!PDF/Ex08/*.tex
+!PDF/Ex09/*.tex
+!PDF/*/*.tex
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

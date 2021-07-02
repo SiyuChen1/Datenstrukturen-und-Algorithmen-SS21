@@ -1,0 +1,67 @@
+\documentclass[12pt]{scrartcl}
+\input{../styles/Packages.tex}
+\input{../styles/FormatAndHeader.tex}
+\usepackage{graphicx}
+
+\setcounter{sheetnr}{9} % Nummer des Übungsblattes
+\setcounter{exnum}{1} % Nummer der Aufgabe
+
+% Beginn des eigentlichen Dokuments
+
+\begin{document}
+
+% Aufgabe 1
+\exercise{Textalgorithmen: Knuth-Morris-Pratt}
+\begin{enumerate}
+  \item Präfix-Tabelle
+    \begin{figure}[!h]
+      \centering
+        \includegraphics[width=0.5\textwidth]{A1a.png}
+      \caption{Präfix-Tabelle}
+    \end{figure}
+
+    \item Knuth-Morris-Pratt-Algorithmus
+    \begin{figure}[!h]
+      \centering
+        \includegraphics[width=0.5\textwidth]{A1b.png}
+      \caption{Knuth-Morris-Pratt-Algorithmus}
+    \end{figure}
+
+\end{enumerate}
+
+% Aufgabe 2
+\exercise{Textalgorithmen: Boyer-Moore}
+\begin{enumerate}
+  \item last-Tabelle, shift-Tabelle und suffix-Tabelle
+    \begin{figure}[!h]
+      \centering
+        \includegraphics[width=0.5\textwidth]{A2a1.png}
+      \caption{last-Tabelle}
+    \end{figure}
+
+    \begin{figure}[!h]
+      \centering
+        \includegraphics[width=0.5\textwidth]{A2a2.png}
+      \caption{shift-Tabelle und suffix-Tabelle}
+    \end{figure}
+
+    \newpage
+
+    \item Boyer-Moore-Algorithmus
+    \begin{figure}[!h]
+      \centering
+        \includegraphics[width=0.5\textwidth]{A2b.png}
+      \caption{Boyer-Moore-Algorithmus}
+    \end{figure}
+
+\end{enumerate}
+
+\exercise{Reguläre Ausdrücke}
+\begin{enumerate}
+  \item \^\ (xy|zz)[a-zA-Z]\{3\}zy\$
+  \item \^\ (Obst|Gemüse|Kräuter)garten(erde)?\$
+  \item \^\ (ein|zwei|drei)und(vier|sech)zig\$
+  \item \^\ [a-zA-Z]\{2\}(a|b)C((dd)\{2,\}|(xyz(xyzxyz)\{1,\}))(A|B|C)?D+\$
+\end{enumerate}
+
+\end{document}

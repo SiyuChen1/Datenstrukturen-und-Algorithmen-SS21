@@ -1,0 +1,29 @@
+\usepackage{tikz}
+
+\usetikzlibrary{positioning}
+\tikzset{
+node of list/.style = { 
+             draw, 
+             fill=orange!20, 
+             minimum height=6mm, 
+             minimum width=6mm,
+             node distance=6mm
+   },
+link/.style = {
+     -stealth,
+     shorten >=1pt
+     },
+array element/.style = {
+    draw, fill=white,
+    minimum width = 6mm,
+    minimum height = 10mm
+  }
+}
+
+\def\LinkedList#1{%
+  \foreach \element in \list {
+     \node[node of list, right = of aux, name=ele] {\element};
+     \draw[link] (aux) -- (ele);
+     \coordinate (aux) at (ele.east);
+  } 
+}

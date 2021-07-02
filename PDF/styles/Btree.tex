@@ -1,0 +1,59 @@
+% We don't need the special font encodings, but still
+% good practice to include these. See:
+%
+% http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+% http://dsanta.users.ch/resources/type1.html
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+% http://tex.stackexchange.com/a/44699
+% http://tex.stackexchange.com/a/44701
+\usepackage[utf8]{inputenc}
+
+% Use Latin Modern, an improved version of the Computer Modern font
+\usepackage{lmodern}
+
+% TikZ is what lets us draw graphics
+\usepackage{tikz}
+
+% Decrease the table column spacing
+% We're using tables to represent nodes in this example
+\setlength{\tabcolsep}{2pt}
+
+% Define our own macros, for convenience
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \ensuremath{ARG} is used to enable mathematics mode in a macro
+% ARG will always be rendered in math mode,
+% regardless of which mode the macro is called in
+%
+% http://www.giss.nasa.gov/tools/latex/ensuremath.html
+
+% These macros create single-row table with the arguments as values
+% Each value is centred, and all borders are drawn
+% eg \threenode{a}{b}{c} creates a single-row table with cols a, b, c
+
+\newcommand{\onenode}[1]{%
+  \begin{tabular}{|c|}
+    \hline #1\\ \hline
+  \end{tabular}
+}
+\newcommand{\twonode}[2]{%
+  \begin{tabular}{|c|c|}
+    \hline #1 & #2\\ \hline
+  \end{tabular}
+}
+\newcommand{\threenode}[3]{%
+  \begin{tabular}{|c|c|c|}
+    \hline #1 & #2 & #3\\ \hline
+  \end{tabular}
+}
+\newcommand{\fournode}[4]{%
+  \begin{tabular}{|c|c|c|c|}
+    \hline #1 & #2 & #3 & #4\\ \hline
+  \end{tabular}
+}
+\newcommand{\fivenode}[5]{%
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline #1 & #2 & #3 & #4 & #5\\ \hline
+  \end{tabular}
+}
